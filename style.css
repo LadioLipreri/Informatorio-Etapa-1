@@ -1,0 +1,123 @@
+/*Flexbox: se necesitas 2 cosas: un contenedor flex y un flex items*/
+/*Si un contenedor es flex, todos los hijos van alineados, su ubican uno al lado del otro*/
+.navegacion{
+    height: 200px; 
+    width: 1300px; 
+    background-color: lightblue; 
+    display: flex;/*Convierto al contenedor en FLEX*/
+    justify-content: space-between;
+}
+
+.navegacion_logo{
+    height: 100px;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.navegacion_links{
+    display: flex;
+    align-items: flex-end;
+}
+
+.navegacion_links li{/*sólo se modifican los li que pertenecen a la clase antepuesta*/
+    font-size: 20px;
+    list-style: none; /*Quita el círculo ° al inicio de cada items*/
+}
+
+.navegacion_links li a{/*sólo se modifican los li que pertenecen a la clase antepuesta*/
+    text-decoration: none; /*Quita el subrrayado de los items*/
+    color: black;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.recursos{
+    display: flex;
+    height: 700px; 
+    width: 1300px; 
+    background-color: cadetblue;
+    flex-wrap: wrap; /*Cuando llega a su límite de ancho del texto ya no se achica más la pantalla, si hay otro elemento a su derecha lo manda para abajo*/
+}
+
+.recursos_articulos{
+    background-color: cadetblue;
+    flex-grow: 3; /*Rellena el espacio sobrante 3 de 4*/
+}
+
+.recursos_adicionales{
+    background-color: orange;
+    width: 300px;
+    flex-grow: 1; /*Rellena el espacio sobrante 1 de 4*/
+}
+
+.recursos_titulo{
+    display: flex;
+    justify-content: center;/*Centra el texto*/
+    text-decoration: underline; /*Subraya el texto*/
+    font-size: 25px;   
+}
+
+.recursos_parrafo{
+    padding: 20px;
+
+}
+
+.recursos_parrafo--izq{
+    text-align: left;
+}
+.recursos_parrafo--cent{
+    text-align: center;
+}
+.recursos_parrafo--der{
+    text-align: right;
+}
+
+.integrantes{
+    background-color: gray;
+}
+
+p{color: blue; font-family: Verdana;}
+h1{
+    color: red;
+    background-color: black;
+}
+
+/*Con los atributos id y class puedo seleccionar a qué aplicar los estilos más específicamente*/
+
+.titulo1{/* Para acceder a una clase se utiliza el punto*/
+    color: green;
+}
+
+#titulo2{
+    color: violet;
+}
+
+/*Cuando un elemento tiene la propiedad GRID se comorta como una caja
+De forma predeterminada todos son filas y una sola columna*/
+
+.grid__container{
+    display: grid;
+    grid-template-columns: 200px 200px 200px; /*Atajo: repeat(3, 200px). Tambien puedo poner max content y se adapta a todo el contenido de la columna (min a la mayor palabra)*/
+    grid-template-rows: 200px 200px 200px;
+    border: 1px solid black;
+    background-color: gray;
+    gap: 10px;/*Agrega espacio entre filas y columnas*/
+}
+
+
+.grid__item{
+    border: 2px solid black;
+    background-color: lightgray;
+}
+
+.grid__item:first-child{
+    background-color: red;
+    grid-column: 1/3;/*Ocupa el lugar desde la primera linea hasta la tercera*/
+    grid-row: 1/3;
+}
+
+.grid__item:nth-child(2){
+    background-color: blue;
+    grid-column: 3/5;
+
+}
